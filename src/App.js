@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux'
+import classNames from 'classnames'
+
 import { addMsg,arr,changeCompleted} from './reduce/add-list'
 
 class App extends Component {
@@ -35,8 +37,10 @@ class App extends Component {
   }
 
   handelClick(e){
-      console.log(e.target)
+    console.log('span元素被点击');
   }
+
+ 
 
   render() {
     return (
@@ -61,8 +65,7 @@ class App extends Component {
                            className={ item.completed ? 'complete':''}
                            >
                 消息ID:{item.id}.
-                消息类型是：{item.type},
-                内容是：{item.text},完成状态：{item.completed? '完成' : '未完成'} <span className="close" onClick={this.handelClick.bind(this)}> X </span></li>
+                内容是：{item.text},完成状态：{item.completed? '完成' : '未完成'} <span className={classNames("close","border")} onClick={this.handelClick.bind(this)}> X </span></li>
               } )
             }
           </ul> 
