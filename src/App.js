@@ -37,6 +37,7 @@ class App extends Component {
   }
 
   handelClick(e){
+    e.preventDefault();
     console.log('span元素被点击');
   }
 
